@@ -5,6 +5,7 @@ Django-Fack
 Forked from https://github.com/revsys/django-fack
 
 My changes:
+
 * removed created/updated time stamps
 
 
