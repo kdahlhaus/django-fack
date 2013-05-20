@@ -4,6 +4,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
 from managers import QuestionManager
+from django.utils.timezone import utc
 
 class Topic(models.Model):
     """
@@ -52,8 +53,6 @@ class Question(models.Model):
     sort_order = models.IntegerField(_('sort order'), default=0,
         help_text=_('The order you would like the question to be displayed.'))
 
-    created_on = models.DateTimeField(_('created on'), default=datetime.datetime.now)
-    updated_on = models.DateTimeField(_('updated on'))
     created_by = models.ForeignKey(User, verbose_name=_('created by'),
         null=True, related_name="+")
     updated_by = models.ForeignKey(User, verbose_name=_('updated by'),
@@ -64,7 +63,6 @@ class Question(models.Model):
     class Meta:
         verbose_name = _("Frequent asked question")
         verbose_name_plural = _("Frequently asked questions")
-        ordering = ['sort_order', 'created_on']
 
     def __unicode__(self):
         return self.text

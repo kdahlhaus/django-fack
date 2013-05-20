@@ -2,6 +2,12 @@
 Django-Fack
 ===========
 
+Forked from https://github.com/revsys/django-fack
+
+My changes:
+* removed created/updated time stamps
+
+
 This is a simple FAQ application for a Django powered site, featuring:
 
 * The basic Q&A model you'd expect.
