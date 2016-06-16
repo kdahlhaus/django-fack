@@ -1,6 +1,7 @@
 from __future__ import absolute_import
 
-from django.conf.urls.defaults import *
+#from django.conf.urls.defaults import *
+from django.conf.urls import patterns, url, include
 from . import views
 
 urlpatterns = patterns('',
